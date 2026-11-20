@@ -177,14 +177,14 @@ class MinsSimulator
             try
             {
                 _serialPort.Write(packetBytes, 0, packetBytes.Length);
-                Console.WriteLine($"[Пакет #{packetNum}] Lat: {latitude:F4}, Lon: {longitude:F4}, Курс: {course:F1}°, CRC: 0x{crc:X8}");
+                Console.WriteLine($"[Пакет #{packetNum}] Lat: {latitude:F4}, Lon: {longitude:F4}, Курс: {course:F1}°, LongHeel: {longHeel:F1}, CrossHeel: {crossHeel:F1}, CRC: 0x{crc:X8}");
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Ошибка отправки: {ex.Message}");
             }
 
-            Thread.Sleep(300);
+            Thread.Sleep(50);
         }
     }
 }
